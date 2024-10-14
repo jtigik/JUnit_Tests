@@ -10,7 +10,7 @@ public class Calculadora {
         System.out.println(calc.soma(4, 5) == 11);
     }
 
-    private int soma(int i, int j) {
+    public int soma(int i, int j) {
         return i + j;
     }
 }
