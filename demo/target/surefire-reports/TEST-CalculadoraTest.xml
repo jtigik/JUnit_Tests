@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="CalculadoraTest" time="0.033" tests="2" errors="0" skipped="0" failures="1">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="CalculadoraTest" time="0.036" tests="2" errors="0" skipped="0" failures="1">
   <properties>
     <property name="java.specification.version" value="22"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-22\bin"/>
-    <property name="sun.java.command" value="C:\Users\Jeferson Tigik\AppData\Local\Temp\surefire9963494519830554478\surefirebooter-20241013235532973_3.jar C:\Users\Jeferson Tigik\AppData\Local\Temp\surefire9963494519830554478 2024-10-13T23-55-32_876-jvmRun1 surefire-20241013235532973_1tmp surefire_0-20241013235532973_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\Jeferson Tigik\AppData\Local\Temp\surefire10936444231861062616\surefirebooter-20241014002332106_3.jar C:\Users\Jeferson Tigik\AppData\Local\Temp\surefire10936444231861062616 2024-10-14T00-23-32_003-jvmRun1 surefire-20241014002332106_1tmp surefire_0-20241014002332106_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="test" value="CalculadoraTest"/>
     <property name="surefire.test.class.path" value="C:\Users\Jeferson Tigik\OneDrive\SENAC - Tech\INF3N231\Java-Teste+JUnit\00 - Fontes\demo\target\test-classes;C:\Users\Jeferson Tigik\OneDrive\SENAC - Tech\INF3N231\Java-Teste+JUnit\00 - Fontes\demo\target\classes;C:\Users\Jeferson Tigik\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.4.2\junit-jupiter-api-5.4.2.jar;C:\Users\Jeferson Tigik\.m2\repository\org\apiguardian\apiguardian-api\1.0.0\apiguardian-api-1.0.0.jar;C:\Users\Jeferson Tigik\.m2\repository\org\opentest4j\opentest4j\1.1.1\opentest4j-1.1.1.jar;C:\Users\Jeferson Tigik\.m2\repository\org\junit\platform\junit-platform-commons\1.4.2\junit-platform-commons-1.4.2.jar;C:\Users\Jeferson Tigik\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.4.2\junit-jupiter-engine-5.4.2.jar;C:\Users\Jeferson Tigik\.m2\repository\org\junit\platform\junit-platform-engine\1.4.2\junit-platform-engine-1.4.2.jar;"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Jeferson Tigik\AppData\Local\Temp\surefire9963494519830554478\surefirebooter-20241013235532973_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Jeferson Tigik\AppData\Local\Temp\surefire10936444231861062616\surefirebooter-20241014002332106_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="22.0.2+9-70"/>
@@ -60,15 +60,12 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="66.0"/>
   </properties>
-  <testcase name="testSomar" classname="CalculadoraTest" time="0.017"/>
-  <testcase name="assertivas" classname="CalculadoraTest" time="0.003">
-    <failure message="expected: &lt;[Exemplo]&gt; but was: &lt;[]&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <[Exemplo]> but was: <[]>
-	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:195)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:184)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:179)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1124)
-	at CalculadoraTest.assertivas(CalculadoraTest.java:36)
+  <testcase name="testSomar" classname="CalculadoraTest" time="0.019"/>
+  <testcase name="assertivas" classname="CalculadoraTest" time="0.004">
+    <failure message="Falhou pelo seguinte motivo: AA" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: Falhou pelo seguinte motivo: AA
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:39)
+	at org.junit.jupiter.api.Assertions.fail(Assertions.java:109)
+	at CalculadoraTest.assertivas(CalculadoraTest.java:47)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:628)

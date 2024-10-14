@@ -31,10 +31,20 @@ public class CalculadoraTest {
         List<String> s1 = new ArrayList<>();
         s1.add("Exemplo");
         List<String> s2 = new ArrayList<>();
+        s2.add("Exemplo");
         List<String> s3 = null;
 
         Assertions.assertEquals(s1, s2);
 
-        Assertions.assertSame(s1, s2);
+        Assertions.assertSame(s1, s1);
+
+        Assertions.assertNotEquals(s1, s3);
+
+        Assertions.assertNull(s3);
+
+        Assertions.assertNotNull(s1);
+
+        Assertions.fail("Falhou pelo seguinte motivo: AA");
+
     }
 }
