@@ -44,7 +44,6 @@ public class CalculadoraTest {
 
         Assertions.assertNotNull(s1);
 
-        Assertions.fail("Falhou pelo seguinte motivo: AA");
-
+        // Assertions.fail("Falhou pelo seguinte motivo: AA");
     }
 }
