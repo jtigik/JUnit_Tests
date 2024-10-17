@@ -46,4 +46,34 @@ public class CalculadoraTest {
 
         // Assertions.fail("Falhou pelo seguinte motivo: AA");
     }
+
+    @Test
+    public void retornarNumeroInteiroNaDivisao() {
+
+        Calculadora calc = new Calculadora();
+
+        float resultado = calc.divide(6, 2);
+
+        Assertions.assertEquals(3, resultado);
+    }
+
+    @Test
+    public void retornarNumeroNegativoNaDivisao() {
+
+        Calculadora calc = new Calculadora();
+
+        float resultado = calc.divide(6, -2);
+
+        Assertions.assertEquals(-3, resultado);
+    }
+
+    @Test
+    public void retornarNumeroDecimalNaDivisao() {
+
+        Calculadora calc = new Calculadora();
+
+        float resultado = calc.divide(10, 3);
+
+        Assertions.assertEquals(3.33, resultado, 0.01);
+    }
 }

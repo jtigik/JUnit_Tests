@@ -13,4 +13,10 @@ public class Calculadora {
     public int soma(int i, int j) {
         return i + j;
     }
+
+    // num = Numerador, den = Denominador
+    public float divide(int num, int den) {
+        return (float) num / den;
+    }
+
 }

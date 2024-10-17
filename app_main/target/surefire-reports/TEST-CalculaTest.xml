@@ -15,7 +15,7 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-22\bin"/>
-    <property name="sun.java.command" value="C:\Users\Jeferson Tigik\AppData\Local\Temp\surefire17565047565861442793\surefirebooter-20241017011323826_3.jar C:\Users\Jeferson Tigik\AppData\Local\Temp\surefire17565047565861442793 2024-10-17T01-13-23_711-jvmRun1 surefire-20241017011323826_1tmp surefire_0-20241017011323826_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\Jeferson Tigik\AppData\Local\Temp\surefire446185652681517497\surefirebooter-20241017014734044_3.jar C:\Users\Jeferson Tigik\AppData\Local\Temp\surefire446185652681517497 2024-10-17T01-47-33_936-jvmRun1 surefire-20241017014734044_1tmp surefire_0-20241017014734044_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="test" value="CalculaTest"/>
     <property name="surefire.test.class.path" value="C:\Users\Jeferson Tigik\OneDrive\SENAC - Tech\INF3N231\Java-Teste+JUnit\00 - Fontes\app_main\target\test-classes;C:\Users\Jeferson Tigik\OneDrive\SENAC - Tech\INF3N231\Java-Teste+JUnit\00 - Fontes\app_main\target\classes;C:\Users\Jeferson Tigik\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.4.2\junit-jupiter-api-5.4.2.jar;C:\Users\Jeferson Tigik\.m2\repository\org\apiguardian\apiguardian-api\1.0.0\apiguardian-api-1.0.0.jar;C:\Users\Jeferson Tigik\.m2\repository\org\opentest4j\opentest4j\1.1.1\opentest4j-1.1.1.jar;C:\Users\Jeferson Tigik\.m2\repository\org\junit\platform\junit-platform-commons\1.4.2\junit-platform-commons-1.4.2.jar;C:\Users\Jeferson Tigik\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.4.2\junit-jupiter-engine-5.4.2.jar;C:\Users\Jeferson Tigik\.m2\repository\org\junit\platform\junit-platform-engine\1.4.2\junit-platform-engine-1.4.2.jar;"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Jeferson Tigik\AppData\Local\Temp\surefire17565047565861442793\surefirebooter-20241017011323826_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Jeferson Tigik\AppData\Local\Temp\surefire446185652681517497\surefirebooter-20241017014734044_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="22.0.2+9-70"/>
@@ -60,5 +60,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="66.0"/>
   </properties>
-  <testcase name="testaSoma" classname="CalculaTest" time="0.01"/>
+  <testcase name="testaSoma" classname="CalculaTest" time="0.009"/>
 </testsuite>
