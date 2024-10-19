@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 import br.com.jtigik.testes.Calculadora;
@@ -40,17 +41,26 @@ public class CalculadoraTest {
 
         Assertions.assertNotEquals(s1, s3);
 
-        Assertions.assertNull(s3);
+        Assertions.assertNull(s1, "Objeto não é NULO!");
 
         Assertions.assertNotNull(s1);
 
         // Assertions.fail("Falhou pelo seguinte motivo: AA");
     }
 
+    Calculadora calc = new Calculadora();
+
+    public void testSum(){
+
+        int expected = 5;
+        int actual = calc.soma(2, 3);
+        assertEquals(expected, actual);
+    }
+
     @Test
     public void retornarNumeroInteiroNaDivisao() {
 
-        Calculadora calc = new Calculadora();
+        calc = new Calculadora();
 
         float resultado = calc.divide(6, 2);
 
@@ -60,7 +70,7 @@ public class CalculadoraTest {
     @Test
     public void retornarNumeroNegativoNaDivisao() {
 
-        Calculadora calc = new Calculadora();
+        calc = new Calculadora();
 
         float resultado = calc.divide(6, -2);
 
@@ -70,10 +80,20 @@ public class CalculadoraTest {
     @Test
     public void retornarNumeroDecimalNaDivisao() {
 
-        Calculadora calc = new Calculadora();
+        calc = new Calculadora();
 
         float resultado = calc.divide(10, 3);
 
         Assertions.assertEquals(3.33, resultado, 0.01);
+    }
+
+    @Test
+    public void retornarZeroComNumeradorZeroNaNaDivisao() {
+
+        calc = new Calculadora();
+
+        float resultado = calc.divide(0, 3);
+
+        Assertions.assertEquals(0, resultado);
     }
 }
