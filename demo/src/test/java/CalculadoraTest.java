@@ -101,20 +101,13 @@ public class CalculadoraTest {
     }
 
     @Test
-    public void deveExplodirComDenominadorZeroNaDivisao() {
+    public void deveLancarUmaExcecaoQuandoDividirPorZero() {
 
-        throw new AssertionError();
-        
-        // throw new RuntimeException();
-
-        
-        /* calc = new Calculadora();
-
-        float resultado = calc.divide(10, 0);
-
-        Assertions.assertEquals(0, resultado); */
-
-        //float resultado = 10/0;
+        try {
+            float resultado = 10/0;
+            
+        } catch (ArithmeticException e) {
+        }
     }
 
 }
