@@ -107,6 +107,7 @@ public class CalculadoraTest {
             float resultado = 10/0;
             
         } catch (ArithmeticException e) {
+            Assertions.assertEquals("/ by zero", e.getMessage());
         }
     }
 
