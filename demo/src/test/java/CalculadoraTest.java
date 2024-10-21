@@ -1,9 +1,10 @@
 
+import static org.junit.jupiter.api.Assertions.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.Assertions;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 import br.com.jtigik.testes.Calculadora;
@@ -102,11 +103,18 @@ public class CalculadoraTest {
     @Test
     public void deveExplodirComDenominadorZeroNaDivisao() {
 
-        calc = new Calculadora();
+        throw new AssertionError();
+        
+        // throw new RuntimeException();
+
+        
+        /* calc = new Calculadora();
 
         float resultado = calc.divide(10, 0);
 
-        Assertions.assertEquals(0, resultado);
+        Assertions.assertEquals(0, resultado); */
+
+        //float resultado = 10/0;
     }
 
 }

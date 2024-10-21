@@ -1,15 +1,10 @@
 -------------------------------------------------------------------------------
 Test set: CalculadoraTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.027 s <<< FAILURE! -- in CalculadoraTest
-CalculadoraTest.deveExplodirComDenominadorZeroNaDivisao -- Time elapsed: 0.013 s <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <0.0> but was: <Infinity>
-	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:195)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:104)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:99)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:714)
-	at CalculadoraTest.deveExplodirComDenominadorZeroNaDivisao(CalculadoraTest.java:109)
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.021 s <<< FAILURE! -- in CalculadoraTest
+CalculadoraTest.deveExplodirComDenominadorZeroNaDivisao -- Time elapsed: 0.008 s <<< FAILURE!
+java.lang.AssertionError
+	at CalculadoraTest.deveExplodirComDenominadorZeroNaDivisao(CalculadoraTest.java:106)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:628)
