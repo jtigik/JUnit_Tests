@@ -9,10 +9,13 @@ import org.junit.jupiter.api.Test;
 import br.com.jtigik.testes.Calculadora;
 
 public class CalculadoraTest {
+    
+    Calculadora calc;
+
 
     @Test
     public void testSomar() {
-        Calculadora calc = new Calculadora();
+        calc = new Calculadora();
         Assertions.assertTrue(calc.soma(2, 3) == 5);
 
         Assertions.assertEquals(5, calc.soma(2, 3));
@@ -48,7 +51,6 @@ public class CalculadoraTest {
         // Assertions.fail("Falhou pelo seguinte motivo: AA");
     }
 
-    Calculadora calc = new Calculadora();
 
     public void testSum(){
 
@@ -88,7 +90,7 @@ public class CalculadoraTest {
     }
 
     @Test
-    public void retornarZeroComNumeradorZeroNaNaDivisao() {
+    public void retornarZeroComNumeradorZeroNaDivisao() {
 
         calc = new Calculadora();
 
@@ -96,4 +98,15 @@ public class CalculadoraTest {
 
         Assertions.assertEquals(0, resultado);
     }
+
+    @Test
+    public void deveExplodirComDenominadorZeroNaDivisao() {
+
+        calc = new Calculadora();
+
+        float resultado = calc.divide(10, 0);
+
+        Assertions.assertEquals(0, resultado);
+    }
+
 }
