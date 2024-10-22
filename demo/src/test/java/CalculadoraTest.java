@@ -23,7 +23,6 @@ public class CalculadoraTest {
         Assertions.assertEquals(5, calc.soma(2, 3), "The sum should be 5");
 
     }
-
     @Test
     public void assertivas() {
         Assertions.assertEquals("casa", "casa");
@@ -109,6 +108,7 @@ public class CalculadoraTest {
         } catch (ArithmeticException e) {
             Assertions.assertEquals("/ by zero", e.getMessage());
         }
+        System.out.println("Terminou!");
     }
 
 }
