@@ -1,18 +1,21 @@
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 import br.com.jtigik.testes.Calculadora;
 
 public class CalculadoraTest {
-    
+
     Calculadora calc;
 
+    @Test
+    void testandoUmTeste() {
+        Assertions.assertTrue("casa".equalsIgnoreCase("CASA"));
+    }
 
     @Test
     public void testSomar() {
@@ -23,6 +26,7 @@ public class CalculadoraTest {
         Assertions.assertEquals(5, calc.soma(2, 3), "The sum should be 5");
 
     }
+
     @Test
     public void assertivas() {
         Assertions.assertEquals("casa", "casa");
@@ -51,9 +55,10 @@ public class CalculadoraTest {
         // Assertions.fail("Falhou pelo seguinte motivo: AA");
     }
 
+    @Test
+    public void testSum() {
 
-    public void testSum(){
-
+        calc = new Calculadora();
         int expected = 5;
         int actual = calc.soma(2, 3);
         assertEquals(expected, actual);
@@ -79,7 +84,7 @@ public class CalculadoraTest {
         Assertions.assertEquals(-3, resultado);
     }
 
-    @test
+    @Test
     public void retornarNumeroNegativoNaDivisao_II() {
 
         calc = new Calculadora();
@@ -113,8 +118,8 @@ public class CalculadoraTest {
         System.out.println("Comecou!");
 
         try {
-            float resultado = 10/0;
-            
+            float resultado = 10 / 0;
+
         } catch (ArithmeticException e) {
             Assertions.assertEquals("/ by zero", e.getMessage());
         }
