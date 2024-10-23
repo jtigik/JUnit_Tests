@@ -114,16 +114,27 @@ public class CalculadoraTest {
     }
 
     @Test
-    public void deveLancarUmaExcecaoQuandoDividirPorZero() {
+    public void deveLancarUmaExcecaoQuandoDividirPorZeroJUnit4() {
         System.out.println("Comecou!");
 
         try {
             float resultado = 10 / 0;
 
+            Assertions.fail("Deveria ser lançada exceção na divisão");
+
         } catch (ArithmeticException e) {
+
             Assertions.assertEquals("/ by zero", e.getMessage());
         }
         System.out.println("Terminou!");
     }
 
+    @Test
+    public void deveLancarUmaExcecaoQuandoDividirPorZeroJUnit5() {
+
+        ArithmeticException exception = Assertions.assertThrows(ArithmeticException.class, () -> {
+            float resultado = 10 / 0;
+        });
+        Assertions.assertEquals("/ by zero", exception.getMessage());
+    }
 }
