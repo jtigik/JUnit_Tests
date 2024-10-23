@@ -10,15 +10,19 @@ import br.com.jtigik.testes.Calculadora;
 
 public class CalculadoraTest {
 
-    Calculadora calc;
+    private Calculadora calc;
+
+    private static int contador = 0;
 
     @Test
     void testandoUmTeste() {
+        System.out.println(contador++);
         Assertions.assertTrue("casa".equalsIgnoreCase("CASA"));
     }
 
     @Test
     public void testSomar() {
+        System.out.println(contador++);
         calc = new Calculadora();
         Assertions.assertTrue(calc.soma(2, 3) == 5);
 
@@ -29,6 +33,7 @@ public class CalculadoraTest {
 
     @Test
     public void assertivas() {
+        System.out.println(contador++);
         Assertions.assertEquals("casa", "casa");
         Assertions.assertNotEquals("casa", "Casa");
 
@@ -57,6 +62,7 @@ public class CalculadoraTest {
 
     @Test
     public void testSum() {
+        System.out.println(contador++);
 
         calc = new Calculadora();
         int expected = 5;
@@ -66,6 +72,7 @@ public class CalculadoraTest {
 
     @Test
     public void retornarNumeroInteiroNaDivisao() {
+        System.out.println(contador++);
 
         calc = new Calculadora();
 
@@ -76,6 +83,7 @@ public class CalculadoraTest {
 
     @Test
     public void retornarNumeroNegativoNaDivisao() {
+        System.out.println(contador++);
 
         calc = new Calculadora();
 
@@ -86,6 +94,7 @@ public class CalculadoraTest {
 
     @Test
     public void retornarNumeroNegativoNaDivisao_II() {
+        System.out.println(contador++);
 
         calc = new Calculadora();
 
@@ -95,6 +104,7 @@ public class CalculadoraTest {
 
     @Test
     public void retornarNumeroDecimalNaDivisao() {
+        System.out.println(contador++);
 
         calc = new Calculadora();
 
@@ -105,6 +115,7 @@ public class CalculadoraTest {
 
     @Test
     public void retornarZeroComNumeradorZeroNaDivisao() {
+        System.out.println(contador++);
 
         calc = new Calculadora();
 
@@ -115,7 +126,7 @@ public class CalculadoraTest {
 
     @Test
     public void deveLancarUmaExcecaoQuandoDividirPorZeroJUnit4() {
-        System.out.println("Comecou!");
+        System.out.println(contador++);
 
         try {
             float resultado = 10 / 0;
@@ -126,11 +137,12 @@ public class CalculadoraTest {
 
             Assertions.assertEquals("/ by zero", e.getMessage());
         }
-        System.out.println("Terminou!");
+
     }
 
     @Test
     public void deveLancarUmaExcecaoQuandoDividirPorZeroJUnit5() {
+        System.out.println(contador++);
 
         ArithmeticException exception = Assertions.assertThrows(ArithmeticException.class, () -> {
             float resultado = 10 / 0;
