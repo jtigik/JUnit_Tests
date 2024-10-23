@@ -86,7 +86,7 @@ public class CalculadoraTest {
 
         float resultado = calc.divide(16, -23);
 
-        
+    }
 
     @Test
     public void retornarNumeroDecimalNaDivisao() {
