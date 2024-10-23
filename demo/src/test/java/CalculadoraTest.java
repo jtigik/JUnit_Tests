@@ -79,6 +79,15 @@ public class CalculadoraTest {
         Assertions.assertEquals(-3, resultado);
     }
 
+    @test
+    public void retornarNumeroNegativoNaDivisao_II() {
+
+        calc = new Calculadora();
+
+        float resultado = calc.divide(16, -23);
+
+        
+
     @Test
     public void retornarNumeroDecimalNaDivisao() {
 
@@ -101,6 +110,7 @@ public class CalculadoraTest {
 
     @Test
     public void deveLancarUmaExcecaoQuandoDividirPorZero() {
+        System.out.println("Comecou!");
 
         try {
             float resultado = 10/0;
