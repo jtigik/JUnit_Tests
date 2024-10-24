@@ -2,20 +2,44 @@
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import br.com.jtigik.testes.Calculadora;
 
 public class CalculadoraTest {
 
-    private Calculadora calc;
+    private final Calculadora calc = new Calculadora();
 
-    private static int contador = 0;
+    private int contador = 0;
+
+    @BeforeEach
+    public void setup() {
+        System.out.println("~~~~~~~~~~");
+    }
+
+    @AfterEach
+    public void tearDown() {
+        System.out.println("^^^^^^^^");
+    }
+
+    @BeforeAll
+    public static void setupAll() {
+        System.out.println("--- BEFORE ALL ---");
+    }
+
+    @AfterAll
+    public static void tearDownAll() {
+        System.out.println("--- AFTER ALL ---");
+    }
 
     @Test
-    void testandoUmTeste() {
+    public void testandoUmTeste() {
         System.out.println(contador++);
         Assertions.assertTrue("casa".equalsIgnoreCase("CASA"));
     }
@@ -23,7 +47,6 @@ public class CalculadoraTest {
     @Test
     public void testSomar() {
         System.out.println(contador++);
-        calc = new Calculadora();
         Assertions.assertTrue(calc.soma(2, 3) == 5);
 
         Assertions.assertEquals(5, calc.soma(2, 3));
@@ -64,7 +87,6 @@ public class CalculadoraTest {
     public void testSum() {
         System.out.println(contador++);
 
-        calc = new Calculadora();
         int expected = 5;
         int actual = calc.soma(2, 3);
         assertEquals(expected, actual);
@@ -73,8 +95,6 @@ public class CalculadoraTest {
     @Test
     public void retornarNumeroInteiroNaDivisao() {
         System.out.println(contador++);
-
-        calc = new Calculadora();
 
         float resultado = calc.divide(6, 2);
 
@@ -85,8 +105,6 @@ public class CalculadoraTest {
     public void retornarNumeroNegativoNaDivisao() {
         System.out.println(contador++);
 
-        calc = new Calculadora();
-
         float resultado = calc.divide(6, -2);
 
         Assertions.assertEquals(-3, resultado);
@@ -96,8 +114,6 @@ public class CalculadoraTest {
     public void retornarNumeroNegativoNaDivisao_II() {
         System.out.println(contador++);
 
-        calc = new Calculadora();
-
         float resultado = calc.divide(16, -23);
 
     }
@@ -105,8 +121,6 @@ public class CalculadoraTest {
     @Test
     public void retornarNumeroDecimalNaDivisao() {
         System.out.println(contador++);
-
-        calc = new Calculadora();
 
         float resultado = calc.divide(10, 3);
 
@@ -116,8 +130,6 @@ public class CalculadoraTest {
     @Test
     public void retornarZeroComNumeradorZeroNaDivisao() {
         System.out.println(contador++);
-
-        calc = new Calculadora();
 
         float resultado = calc.divide(0, 3);
 

@@ -1,14 +1,14 @@
 -------------------------------------------------------------------------------
 Test set: CalculadoraTest
 -------------------------------------------------------------------------------
-Tests run: 11, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.041 s <<< FAILURE! -- in CalculadoraTest
-CalculadoraTest.assertivas -- Time elapsed: 0.003 s <<< FAILURE!
+Tests run: 11, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.044 s <<< FAILURE! -- in CalculadoraTest
+CalculadoraTest.assertivas -- Time elapsed: 0.004 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: Objeto não é NULO! ==> expected: <null> but was: <[Exemplo]>
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertNull.failNotNull(AssertNull.java:48)
 	at org.junit.jupiter.api.AssertNull.assertNull(AssertNull.java:37)
 	at org.junit.jupiter.api.Assertions.assertNull(Assertions.java:266)
-	at CalculadoraTest.assertivas(CalculadoraTest.java:56)
+	at CalculadoraTest.assertivas(CalculadoraTest.java:79)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:628)
