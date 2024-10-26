@@ -10,6 +10,10 @@ public class Calculadora {
         System.out.println(calc.soma(4, 5) == 11);
     }
 
+    public Calculadora() {
+        System.out.println("New calc");
+    }
+
     public int soma(int i, int j) {
         return i + j;
     }

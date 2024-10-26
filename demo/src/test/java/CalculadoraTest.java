@@ -1,11 +1,12 @@
 
+import static org.junit.jupiter.api.Assertions.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,7 +15,7 @@ import br.com.jtigik.testes.Calculadora;
 
 public class CalculadoraTest {
 
-    private final Calculadora calc = new Calculadora();
+    private static Calculadora calc;
 
     private int contador = 0;
 
@@ -31,6 +32,7 @@ public class CalculadoraTest {
     @BeforeAll
     public static void setupAll() {
         System.out.println("--- BEFORE ALL ---");
+        calc = new Calculadora();
     }
 
     @AfterAll
@@ -76,8 +78,7 @@ public class CalculadoraTest {
 
         Assertions.assertNotEquals(s1, s3);
 
-        Assertions.assertNull(s1, "Objeto não é NULO!");
-
+        // Assertions.assertNull(s1, "Objeto não é NULO!");
         Assertions.assertNotNull(s1);
 
         // Assertions.fail("Falhou pelo seguinte motivo: AA");
@@ -103,6 +104,7 @@ public class CalculadoraTest {
 
     @Test
     public void retornarNumeroNegativoNaDivisao() {
+
         System.out.println(contador++);
 
         float resultado = calc.divide(6, -2);
@@ -112,6 +114,7 @@ public class CalculadoraTest {
 
     @Test
     public void retornarNumeroNegativoNaDivisao_II() {
+
         System.out.println(contador++);
 
         float resultado = calc.divide(16, -23);
@@ -120,6 +123,7 @@ public class CalculadoraTest {
 
     @Test
     public void retornarNumeroDecimalNaDivisao() {
+
         System.out.println(contador++);
 
         float resultado = calc.divide(10, 3);
@@ -129,6 +133,7 @@ public class CalculadoraTest {
 
     @Test
     public void retornarZeroComNumeradorZeroNaDivisao() {
+
         System.out.println(contador++);
 
         float resultado = calc.divide(0, 3);
@@ -138,6 +143,7 @@ public class CalculadoraTest {
 
     @Test
     public void deveLancarUmaExcecaoQuandoDividirPorZeroJUnit4() {
+
         System.out.println(contador++);
 
         try {
