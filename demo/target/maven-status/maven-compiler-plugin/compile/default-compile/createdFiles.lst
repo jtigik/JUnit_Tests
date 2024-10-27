@@ -1,1 +1,3 @@
+br\com\jtigik\domain\exceptions\ValidationException.class
+br\com\jtigik\domain\Usuario.class
 br\com\jtigik\testes\Calculadora.class

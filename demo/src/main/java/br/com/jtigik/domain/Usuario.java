@@ -1,5 +1,7 @@
 package br.com.jtigik.domain;
 
+import br.com.jtigik.domain.exceptions.ValidationException;
+
 public class Usuario {
 
     private final long id;
@@ -8,6 +10,17 @@ public class Usuario {
     private final String senha;
 
     public Usuario(long id, String nome, String email, String senha) {
+
+        if (nome == null) {
+            throw new ValidationException("Nome é obrigatório");
+        }
+        if (email == null) {
+            throw new ValidationException("Nome é obrigatório");
+        }
+        if (senha == null) {
+            throw new ValidationException("Senha é obrigatória");
+        }
+
         this.id = id;
         this.nome = nome;
         this.email = email;
