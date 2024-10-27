@@ -1,2 +1,3 @@
 CalculadoraTest.class
 br\com\jtigik\domain\UsuarioTest.class
+br\com\jtigik\builder\UsuarioBuilder.class
