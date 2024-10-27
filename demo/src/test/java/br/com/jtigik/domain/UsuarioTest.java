@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import br.com.jtigik.domain.exceptions.ValidationException;
+
 @DisplayName("Domíno: Usuário")
 public class UsuarioTest {
 
@@ -21,6 +23,13 @@ public class UsuarioTest {
                 () -> assertEquals("123456", usuario.getSenha())
         );
 
+    }
+
+    @Test
+    public void deveRejeitarUsuarioSemNome() {
+        ValidationException ex = Assertions.assertThrows(ValidationException.class, ()
+                -> new Usuario(1L, null, "user@mail.com", "123456"));
+        assertEquals("Nome é obrigatório!\n", ex.getMessage());
     }
 
 }
