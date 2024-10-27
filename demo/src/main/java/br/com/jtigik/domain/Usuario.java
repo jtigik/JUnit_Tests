@@ -12,13 +12,13 @@ public class Usuario {
     public Usuario(long id, String nome, String email, String senha) {
 
         if (nome == null) {
-            throw new ValidationException("Nome é obrigatório");
+            throw new ValidationException("Nome é obrigatório!\n");
         }
         if (email == null) {
-            throw new ValidationException("Nome é obrigatório");
+            throw new ValidationException("Nome é obrigatório!\n");
         }
         if (senha == null) {
-            throw new ValidationException("Senha é obrigatória");
+            throw new ValidationException("Senha é obrigatória!\n");
         }
 
         this.id = id;
