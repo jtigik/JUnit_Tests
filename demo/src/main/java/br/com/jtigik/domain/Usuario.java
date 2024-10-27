@@ -4,7 +4,7 @@ import br.com.jtigik.domain.exceptions.ValidationException;
 
 public class Usuario {
 
-    private final long id;
+    private final Long id;
     private final String nome;
     private final String email;
     private final String senha;
