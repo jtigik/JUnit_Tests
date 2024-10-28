@@ -1,15 +1,17 @@
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import br.com.jtigik.testes.Calculadora;
 
@@ -167,4 +169,12 @@ public class CalculadoraTest {
         });
         Assertions.assertEquals("/ by zero", exception.getMessage());
     }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"Teste_1", "Teste_2", "Teste_3"})
+    public void testString(String param) {
+        System.out.println(param);
+        assertNotNull(param);
+    }
+
 }
