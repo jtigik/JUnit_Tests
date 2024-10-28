@@ -1,4 +1,4 @@
-package br.com.jtigik.builder;
+package br.com.jtigik.domain.builder;
 
 import br.com.jtigik.domain.Usuario;
 

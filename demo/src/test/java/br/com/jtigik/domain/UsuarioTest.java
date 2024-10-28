@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static br.com.jtigik.builder.UsuarioBuilder.umUsuario;
+import static br.com.jtigik.domain.builder.UsuarioBuilder.umUsuario;
 import br.com.jtigik.domain.exceptions.ValidationException;
 
 @DisplayName("Domíno: Usuário")
