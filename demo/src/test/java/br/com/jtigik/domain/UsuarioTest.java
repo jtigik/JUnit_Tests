@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
 
 import static br.com.jtigik.domain.builder.UsuarioBuilder.umUsuario;
 import br.com.jtigik.domain.exceptions.ValidationException;
@@ -30,6 +31,27 @@ public class UsuarioTest {
         ValidationException ex = Assertions.assertThrows(ValidationException.class, ()
                 -> umUsuario().comNome(null).agora());
         assertEquals("Nome é obrigatório!\n", ex.getMessage());
+    }
+
+    @Test
+    public void deveRejeitarUsuarioSemEmail() {
+        ValidationException ex = Assertions.assertThrows(ValidationException.class, ()
+                -> umUsuario().comEmail(null).agora());
+        assertEquals("E-mail é obrigatório!\n", ex.getMessage());
+    }
+
+    @Test
+    public void deveRejeitarUsuarioSemSenha() {
+        ValidationException ex = Assertions.assertThrows(ValidationException.class, ()
+                -> umUsuario().comSenha(null).agora());
+        assertEquals("Senha é obrigatória!\n", ex.getMessage());
+    }
+
+    @ParameterizedTest
+    public void deveValidarCamposObrigatorios(Long id, String nome, String email, String senha, String mensagem) {
+        ValidationException ex = Assertions.assertThrows(ValidationException.class, ()
+                -> umUsuario().comId(id).comNome(nome).comEmail(email).comSenha(senha).agora());
+        assertEquals(mensagem, ex.getMessage());
     }
 
 }

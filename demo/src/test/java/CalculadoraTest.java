@@ -178,6 +178,10 @@ public class CalculadoraTest {
         assertNotNull(param);
     }
 
+    /*
+    * CSV:
+    * Coma Separated Values
+     */
     @ParameterizedTest
     @CsvSource(value = {
         "6, 2, 3",
@@ -185,9 +189,8 @@ public class CalculadoraTest {
         "10, 3, 3.3333332538604736",
         "0, 2, 0"
     })
-    public void deveDividirCorretamente(int num, int den, int res) {
+    public void deveDividirCorretamente(int num, int den, double res) {
         float resultado = calc.divide(num, den);
         Assertions.assertEquals(res, resultado);
     }
-
 }

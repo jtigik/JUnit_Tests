@@ -15,7 +15,7 @@ public class Usuario {
             throw new ValidationException("Nome é obrigatório!\n");
         }
         if (email == null) {
-            throw new ValidationException("Nome é obrigatório!\n");
+            throw new ValidationException("E-mail é obrigatório!\n");
         }
         if (senha == null) {
             throw new ValidationException("Senha é obrigatória!\n");
