@@ -27,28 +27,7 @@ public class UsuarioTest {
 
     }
 
-    @Test
-    public void deveRejeitarUsuarioSemNome() {
-        ValidationException ex = Assertions.assertThrows(ValidationException.class, ()
-                -> umUsuario().comNome(null).agora());
-        assertEquals("Nome é obrigatório!\n", ex.getMessage());
-    }
-
-    @Test
-    public void deveRejeitarUsuarioSemEmail() {
-        ValidationException ex = Assertions.assertThrows(ValidationException.class, ()
-                -> umUsuario().comEmail(null).agora());
-        assertEquals("E-mail é obrigatório!\n", ex.getMessage());
-    }
-
-    @Test
-    public void deveRejeitarUsuarioSemSenha() {
-        ValidationException ex = Assertions.assertThrows(ValidationException.class, ()
-                -> umUsuario().comSenha(null).agora());
-        assertEquals("Senha é obrigatória!\n", ex.getMessage());
-    }
-
-    @ParameterizedTest
+    @ParameterizedTest(name = "[{index}] - {4}")
     @CsvSource(value = {
         "1, NULL, user@mail.com, 123456, Nome é obrigatório!",
         "1, Usuário válido, NULL, 123456, E-mail é obrigatório!",
