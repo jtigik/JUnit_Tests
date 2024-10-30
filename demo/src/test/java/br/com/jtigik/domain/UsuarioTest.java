@@ -1,14 +1,13 @@
 package br.com.jtigik.domain;
 
-import static br.com.jtigik.domain.builder.UsuarioBuilder.*;
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
+import static br.com.jtigik.domain.builder.UsuarioBuilder.umUsuario;
 import br.com.jtigik.domain.exceptions.ValidationException;
 
 @DisplayName("Domíno: Usuário")
@@ -28,8 +27,10 @@ public class UsuarioTest {
 
     }
 
-    @ParameterizedTest(name = "[{index}] - {4}")
-    @CsvFileSource(files = "src\\test\\resources\\CamposObrigatoriosUsuario.csv", nullValues = "NULL", numLinesToSkip = 1)
+    // @ParameterizedTest(name = "[{index}] - {4}")
+    // @CsvFileSource(files = "src\\test\\resources\\CamposObrigatoriosUsuario.csv", nullValues = "NULL", numLinesToSkip = 1)
+    @ParameterizedTest
+    @CsvFileSource(files = "src\\test\\resources\\CamposObrigatoriosUsuario.csv", nullValues = "NULL", useHeadersInDisplayName = true)
     public void deveValidarCamposObrigatorios(Long id, String nome, String email, String senha, String mensagem) {
         ValidationException ex = Assertions.assertThrows(ValidationException.class, ()
                 -> umUsuario().comId(id).comNome(nome).comEmail(email).comSenha(senha).agora());
