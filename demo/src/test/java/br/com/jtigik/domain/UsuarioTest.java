@@ -27,8 +27,6 @@ public class UsuarioTest {
 
     }
 
-    // @ParameterizedTest(name = "[{index}] - {4}")
-    // @CsvFileSource(files = "src\\test\\resources\\CamposObrigatoriosUsuario.csv", nullValues = "NULL", numLinesToSkip = 1)
     @ParameterizedTest
     @CsvFileSource(files = "src\\test\\resources\\CamposObrigatoriosUsuario.csv", nullValues = "NULL", useHeadersInDisplayName = true)
     public void deveValidarCamposObrigatorios(Long id, String nome, String email, String senha, String mensagem) {

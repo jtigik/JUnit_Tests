@@ -9,6 +9,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import br.com.jtigik.domain.Conta;
+
 /**
  * Classe responsável pela criação de builders de entidades
  *
@@ -153,6 +155,11 @@ public class BuilderMaster {
         if (classe.contains(".")) {
             listaImports.add("import " + classe + ";");
         }
+    }
+
+    public static void main(String[] args) {
+        BuilderMaster master = new BuilderMaster();
+        master.gerarCodigoClasse(Conta.class);
     }
 
 }

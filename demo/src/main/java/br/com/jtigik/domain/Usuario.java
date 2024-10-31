@@ -1,5 +1,7 @@
 package br.com.jtigik.domain;
 
+import java.util.Objects;
+
 import br.com.jtigik.domain.exceptions.ValidationException;
 
 public class Usuario {
@@ -43,4 +45,35 @@ public class Usuario {
     public String getSenha() {
         return senha;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 53 * hash + Objects.hashCode(this.nome);
+        hash = 53 * hash + Objects.hashCode(this.email);
+        hash = 53 * hash + Objects.hashCode(this.senha);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Usuario other = (Usuario) obj;
+        if (!Objects.equals(this.nome, other.nome)) {
+            return false;
+        }
+        if (!Objects.equals(this.email, other.email)) {
+            return false;
+        }
+        return Objects.equals(this.senha, other.senha);
+    }
+
 }

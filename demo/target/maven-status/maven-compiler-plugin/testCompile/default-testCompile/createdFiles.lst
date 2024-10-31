@@ -1,4 +1,6 @@
-CalculadoraTest.class
 br\com\jtigik\domain\builder\BuilderMaster.class
-br\com\jtigik\domain\builder\UsuarioBuilder.class
 br\com\jtigik\domain\UsuarioTest.class
+CalculadoraTest.class
+br\com\jtigik\domain\ContaTest.class
+br\com\jtigik\domain\builder\ContaBuilder.class
+br\com\jtigik\domain\builder\UsuarioBuilder.class
