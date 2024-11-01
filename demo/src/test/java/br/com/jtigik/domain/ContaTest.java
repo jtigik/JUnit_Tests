@@ -2,9 +2,13 @@ package br.com.jtigik.domain;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import br.com.jtigik.domain.builder.ContaBuilder;
+import static br.com.jtigik.domain.builder.ContaBuilder.umaConta;
 import static br.com.jtigik.domain.builder.UsuarioBuilder.umUsuario;
+import br.com.jtigik.domain.exceptions.ValidationException;
 
 public class ContaTest {
 
@@ -18,6 +22,15 @@ public class ContaTest {
                 () -> Assertions.assertEquals("Conta Válida", conta.nome()),
                 () -> Assertions.assertEquals(umUsuario().agora(), conta.usuario())
         );
+
+    }
+
+    @ParameterizedTest
+    @MethodSource(value = "dataProvider")
+    public void deveRejeitarContaInvalida(Long id, String nome, Usuario usuario, String mensagem) {
+        String errorMessage = Assertions.assertThrows(ValidationException.class, ()
+                -> umaConta().comId(id).comNome(nome).comUsuario(usuario).agora()).getMessage();
+        Assertions.assertEquals(mensagem, errorMessage);
 
     }
 }
