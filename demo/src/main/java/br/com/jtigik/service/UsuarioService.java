@@ -1,18 +1,19 @@
 package br.com.jtigik.service;
 
 import br.com.jtigik.domain.Usuario;
+import br.com.jtigik.service.repository.UsuarioRepository;
 
 public class UsuarioService {
 
-    public Usuario Salvar(Usuario usuario) {
-        /*
-         * Conectar com o Banco
-         * Preparar o SQL
-         * Executar a Consulta
-         * Obter o Usuário persistido
-         */
+    private UsuarioRepository repository;
 
-        return usuario;
+    public UsuarioService(UsuarioRepository repository) {
+        this.repository = repository;
+    }
+
+    public Usuario Salvar(Usuario usuario) {
+
+        return repository.salvar(usuario);
     }
 
 }
