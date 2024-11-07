@@ -10,17 +10,22 @@ import br.com.jtigik.service.repository.UsuarioRepository;
 public final class UsuarioMemoryRepository implements UsuarioRepository {
 
     private final List<Usuario> users;
-    private Long currentId;
+    private static Long currentId;
 
     public UsuarioMemoryRepository() {
-        this.currentId = 0L;
+        UsuarioMemoryRepository.currentId = 0L;
         this.users = new ArrayList<>();
-        salvar(new Usuario(currentId, "User #1", "user1@mail.com", "123456"));
+        salvar(new Usuario(
+                currentId, "User #1", "user1@mail.com", "123456"));
+
     }
 
     @Override
     public Usuario salvar(Usuario usuario) {
-        return new Usuario(nextId(), usuario.getNome(), usuario.getEmail(), usuario.getSenha());
+        Usuario newUser = new Usuario(
+                nextId(), usuario.getNome(), usuario.getEmail(), usuario.getSenha());
+        users.add(newUser);
+        return newUser;
     }
 
     @Override
@@ -30,7 +35,9 @@ public final class UsuarioMemoryRepository implements UsuarioRepository {
     }
 
     public void printUsers() {
-        System.out.println(users);
+        for (Usuario user : users) {
+            System.out.println(user);
+        }
     }
 
     private Long nextId() {
@@ -39,6 +46,8 @@ public final class UsuarioMemoryRepository implements UsuarioRepository {
 
     public static void main(String[] args) {
         UsuarioMemoryRepository repo = new UsuarioMemoryRepository();
+        repo.salvar(new Usuario(
+                currentId, "Usuário Qualquer", "a.qualquer@mail.com", "aaaa"));
         repo.printUsers();
     }
 }

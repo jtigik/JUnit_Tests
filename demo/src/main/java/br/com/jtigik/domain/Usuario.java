@@ -76,4 +76,9 @@ public class Usuario {
         return Objects.equals(this.senha, other.senha);
     }
 
+    @Override
+    public String toString() {
+        return "Usuario [id=" + id + ", nome=" + nome + ", email=" + email + ", senha=" + senha + "]";
+    }
+
 }
