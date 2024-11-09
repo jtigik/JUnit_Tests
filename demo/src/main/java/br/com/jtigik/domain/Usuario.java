@@ -11,7 +11,7 @@ public class Usuario {
     private final String email;
     private final String senha;
 
-    public Usuario(long id, String nome, String email, String senha) {
+    public Usuario(Long id, String nome, String email, String senha) {
 
         if (nome == null) {
             throw new ValidationException("Nome é obrigatório!");

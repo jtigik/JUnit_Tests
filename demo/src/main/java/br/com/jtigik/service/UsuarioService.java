@@ -12,7 +12,7 @@ public class UsuarioService {
         this.repository = repository;
     }
 
-    public Usuario Salvar(Usuario usuario) {
+    public Usuario salvar(Usuario usuario) {
         repository.getUserByEmail(usuario.getEmail()).ifPresent(user -> {
             throw new ValidationException(String.format("Usuário %s já cadastrado!", usuario.getEmail()));
         });
