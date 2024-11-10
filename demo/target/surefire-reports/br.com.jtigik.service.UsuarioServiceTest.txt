@@ -1,0 +1,14 @@
+-------------------------------------------------------------------------------
+Test set: br.com.jtigik.service.UsuarioServiceTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.041 s <<< FAILURE! -- in br.com.jtigik.service.UsuarioServiceTest
+br.com.jtigik.service.UsuarioServiceTest.deveSalvarUsuarioComSucesso -- Time elapsed: 0.019 s <<< ERROR!
+br.com.jtigik.domain.exceptions.ValidationException: Usuário user@mail.com já cadastrado!
+	at br.com.jtigik.service.UsuarioService.lambda$0(UsuarioService.java:17)
+	at java.base/java.util.Optional.ifPresent(Optional.java:178)
+	at br.com.jtigik.service.UsuarioService.salvar(UsuarioService.java:16)
+	at br.com.jtigik.service.UsuarioServiceTest.deveSalvarUsuarioComSucesso(UsuarioServiceTest.java:18)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
