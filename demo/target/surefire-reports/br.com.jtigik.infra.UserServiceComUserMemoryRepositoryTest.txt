@@ -1,17 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: br.com.jtigik.infra.UserServiceComUserMemoryRepositoryTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.060 s <<< FAILURE! -- in br.com.jtigik.infra.UserServiceComUserMemoryRepositoryTest
-br.com.jtigik.infra.UserServiceComUserMemoryRepositoryTest.deveRejeitarUsuarioExistente -- Time elapsed: 0.007 s <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <expected> but was: <Usuário user@mail.com já cadastrado!>
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
-	at br.com.jtigik.infra.UserServiceComUserMemoryRepositoryTest.deveRejeitarUsuarioExistente(UserServiceComUserMemoryRepositoryTest.java:32)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 s -- in br.com.jtigik.infra.UserServiceComUserMemoryRepositoryTest
