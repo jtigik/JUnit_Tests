@@ -14,7 +14,7 @@ public class UsuarioServiceTest {
     @Test
     public void deveSalvarUsuarioComSucesso() {
         service = new UsuarioService(new UsuarioDummyRepository());
-        Usuario user = UsuarioBuilder.umUsuario().comId(null).agora();
+        Usuario user = UsuarioBuilder.umUsuario().comId(null).comEmail("outro.user@mail.com").agora();
         Usuario saveUser = service.salvar(user);
         Assertions.assertNotNull(saveUser.getId());
     }

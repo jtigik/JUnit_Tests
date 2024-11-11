@@ -21,7 +21,10 @@ public class UsuarioDummyRepository implements UsuarioRepository {
 
     @Override
     public Optional<Usuario> getUserByEmail(String email) {
-        return Optional.of(umUsuario().comEmail(email).agora());
+        if ("user@mail.com".equals(email)) {
+            return Optional.of(umUsuario().comEmail(email).agora());
+        }
+        return Optional.empty();
     }
 
 }
