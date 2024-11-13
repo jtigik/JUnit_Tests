@@ -1,5 +1,7 @@
 package br.com.jtigik.service;
 
+import java.util.Optional;
+
 import br.com.jtigik.domain.Usuario;
 import br.com.jtigik.domain.exceptions.ValidationException;
 import br.com.jtigik.service.repository.UsuarioRepository;
@@ -17,6 +19,10 @@ public class UsuarioService {
             throw new ValidationException(String.format("Usuário %s já cadastrado!", usuario.getEmail()));
         });
         return repository.salvar(usuario);
+    }
+
+    public Optional<Usuario> getUserByEmail(String email) {
+        return repository.getUserByEmail(email);
     }
 
 }

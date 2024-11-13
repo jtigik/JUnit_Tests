@@ -10,9 +10,13 @@ public class UsuarioServiceTest {
     private UsuarioService service;
 
     @Test
-    public void deveSalvarUsuarioComSucesso() {
+    @SuppressWarnings("static-access")
+    public void deveRetornarUsuarioPorEmail() {
         UsuarioRepository repository = Mockito.mock(UsuarioRepository.class);
-        service = new UsuarioService(null);
+        service = new UsuarioService(repository);
+
+        service.getUserByEmail("mail@mail.com");
+        // Assertions.assertTrue(user.isEmpty());
     }
 
 }

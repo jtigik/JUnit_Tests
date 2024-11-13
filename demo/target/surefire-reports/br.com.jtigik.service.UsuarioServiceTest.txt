@@ -1,4 +1,14 @@
 -------------------------------------------------------------------------------
 Test set: br.com.jtigik.service.UsuarioServiceTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.046 s -- in br.com.jtigik.service.UsuarioServiceTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.040 s <<< FAILURE! -- in br.com.jtigik.service.UsuarioServiceTest
+br.com.jtigik.service.UsuarioServiceTest.deveRetornarUsuarioPorEmail -- Time elapsed: 0.018 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problem: 
+	The method isEmpty() is undefined for the type Optional<Usuario>
+
+	at br.com.jtigik.service.UsuarioServiceTest.deveRetornarUsuarioPorEmail(UsuarioServiceTest.java:23)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
