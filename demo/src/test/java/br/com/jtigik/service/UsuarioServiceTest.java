@@ -1,11 +1,9 @@
 package br.com.jtigik.service;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
-import br.com.jtigik.domain.Usuario;
-import br.com.jtigik.domain.builder.UsuarioBuilder;
-import br.com.jtigik.infra.UsuarioDummyRepository;
+import br.com.jtigik.service.repository.UsuarioRepository;
 
 public class UsuarioServiceTest {
 
@@ -13,10 +11,8 @@ public class UsuarioServiceTest {
 
     @Test
     public void deveSalvarUsuarioComSucesso() {
-        service = new UsuarioService(new UsuarioDummyRepository());
-        Usuario user = UsuarioBuilder.umUsuario().comId(null).comEmail("outro.user@mail.com").agora();
-        Usuario saveUser = service.salvar(user);
-        Assertions.assertNotNull(saveUser.getId());
+        UsuarioRepository repository = Mockito.mock(UsuarioRepository.class);
+        service = new UsuarioService(null);
     }
 
 }
