@@ -7,11 +7,11 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import br.com.jtigik.domain.Usuario;
-import br.com.jtigik.service.repository.UsuarioRepository;
+import br.com.jtigik.service.repositories.UsuarioRepository;
 
 public class UsuarioServiceTest {
 
-    private UsuarioService service;
+    private static UsuarioService service;
 
     @Test
     public void deveRetornarUsuarioPorEmail() {
@@ -22,6 +22,6 @@ public class UsuarioServiceTest {
 
         Assertions.assertTrue(!user.isPresent());
 
-        Assertions.assertTrue(user.isEmpty());
+        // Assertions.assertTrue(user.isEmpty());
     }
 }

@@ -4,7 +4,7 @@ import java.util.Optional;
 
 import br.com.jtigik.domain.Usuario;
 import br.com.jtigik.domain.exceptions.ValidationException;
-import br.com.jtigik.service.repository.UsuarioRepository;
+import br.com.jtigik.service.repositories.UsuarioRepository;
 
 public class UsuarioService {
 

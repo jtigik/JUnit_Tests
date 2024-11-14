@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import br.com.jtigik.domain.Usuario;
-import br.com.jtigik.service.repository.UsuarioRepository;
+import br.com.jtigik.service.repositories.UsuarioRepository;
 
 public final class UsuarioMemoryRepository implements UsuarioRepository {
 

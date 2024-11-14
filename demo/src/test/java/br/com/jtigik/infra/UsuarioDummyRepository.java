@@ -1,12 +1,11 @@
 package br.com.jtigik.infra;
 
-import static br.com.jtigik.domain.builder.UsuarioBuilder.*;
-
 import java.util.Optional;
 
 import br.com.jtigik.domain.Usuario;
 import br.com.jtigik.domain.builder.UsuarioBuilder;
-import br.com.jtigik.service.repository.UsuarioRepository;
+import static br.com.jtigik.domain.builder.UsuarioBuilder.umUsuario;
+import br.com.jtigik.service.repositories.UsuarioRepository;
 
 public class UsuarioDummyRepository implements UsuarioRepository {
 

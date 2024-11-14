@@ -1,4 +1,4 @@
-package br.com.jtigik.service.repository;
+package br.com.jtigik.service.repositories;
 
 import java.util.Optional;
 
