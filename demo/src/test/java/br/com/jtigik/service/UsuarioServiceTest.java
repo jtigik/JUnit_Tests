@@ -22,6 +22,6 @@ public class UsuarioServiceTest {
 
         Assertions.assertTrue(!user.isPresent());
 
-        // Assertions.assertTrue(user.isEmpty());
+        Assertions.assertTrue(user.isEmpty());
     }
 }
