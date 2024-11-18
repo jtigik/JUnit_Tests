@@ -20,8 +20,8 @@ public class UsuarioServiceTest {
 
         Optional<Usuario> user = service.getUserByEmail("mail@mail.com");
 
-        Assertions.assertTrue(!user.isPresent());
+        System.out.println(user);
 
-        Assertions.assertTrue(user.isEmpty());
+        Assertions.assertFalse(user.isPresent());
     }
 }
