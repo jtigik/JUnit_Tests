@@ -14,13 +14,11 @@ public class UsuarioServiceTest {
     private static UsuarioService service;
 
     @Test
-    public void deveRetornarUsuarioPorEmail() {
+    public void deveRetornarEmptyQuandoUsuarioInexistente() {
         UsuarioRepository repository = Mockito.mock(UsuarioRepository.class);
         service = new UsuarioService(repository);
 
         Optional<Usuario> user = service.getUserByEmail("mail@mail.com");
-
-        System.out.println(user);
 
         Assertions.assertFalse(user.isPresent());
     }
