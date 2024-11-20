@@ -39,5 +39,7 @@ public class UsuarioServiceTest {
         Assertions.assertTrue(user.isPresent());
 
         System.out.println(user);
+
+        Mockito.verify(repository).getUserByEmail("mail@mail.com");
     }
 }
