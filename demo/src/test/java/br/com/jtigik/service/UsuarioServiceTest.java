@@ -28,15 +28,16 @@ public class UsuarioServiceTest {
         Assertions.assertFalse(user.isPresent());
     }
 
+    @SuppressWarnings("unchecked")
     @Test
     public void deveRetornarUsuarioPorEmail() {
         UsuarioRepository repository = mock(UsuarioRepository.class);
         service = new UsuarioService(repository);
 
         when(repository.getUserByEmail("mail@mail.com"))
-                .thenReturn(Optional.of(UsuarioBuilder.umUsuario().agora()))
-                .thenReturn(Optional.of(UsuarioBuilder.umUsuario().agora()))
-                .thenReturn(null);
+                .thenReturn(Optional.of(UsuarioBuilder.umUsuario().agora()),
+                        Optional.of(UsuarioBuilder.umUsuario().agora()),
+                        null);
 
         Optional<Usuario> user = service.getUserByEmail("mail@mail.com");
         System.out.println(user);
