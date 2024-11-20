@@ -1,12 +1,12 @@
 package br.com.jtigik.service;
 
+import static org.mockito.Mockito.*;
+
 import java.util.Optional;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 import br.com.jtigik.domain.Usuario;
 import br.com.jtigik.domain.builder.UsuarioBuilder;
@@ -41,13 +41,15 @@ public class UsuarioServiceTest {
 
         Optional<Usuario> user = service.getUserByEmail("mail@mail.com");
         System.out.println(user);
-        user = service.getUserByEmail("mail@mail.com");
+        // user = service.getUserByEmail("mailmail2@mail.com");
         System.out.println(user);
         user = service.getUserByEmail("mail@mail.com");
         System.out.println(user);
 
-        //Assertions.assertTrue(user.isPresent());
-        // verify(repository, times(1)).getUserByEmail("mail@mail.com");
-        //verify(repository, Mockito.atLeastOnce()).getUserByEmail("mail@mail.com");
+        Assertions.assertTrue(user.isPresent());
+
+        verify(repository, Mockito.atLeastOnce()).getUserByEmail("mail@mail.com");
+        verify(repository, Mockito.never()).getUserByEmail("outro.mail@mail.com");
+        Mockito.verifyNoMoreInteractions(repository);
     }
 }
