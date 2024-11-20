@@ -5,6 +5,9 @@ import java.util.Optional;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import br.com.jtigik.domain.Usuario;
 import br.com.jtigik.domain.builder.UsuarioBuilder;
@@ -31,7 +34,7 @@ public class UsuarioServiceTest {
         UsuarioRepository repository = Mockito.mock(UsuarioRepository.class);
         service = new UsuarioService(repository);
 
-        Mockito.when(repository.getUserByEmail("mail@mail.com"))
+        when(repository.getUserByEmail("mail@mail.com"))
                 .thenReturn(Optional.of(UsuarioBuilder.umUsuario().agora()));
 
         Optional<Usuario> user = service.getUserByEmail("mail@mail.com");
@@ -40,6 +43,6 @@ public class UsuarioServiceTest {
 
         System.out.println(user);
 
-        Mockito.verify(repository).getUserByEmail("mail@mail.com");
+        verify(repository, times(1)).getUserByEmail("mail@mail.com");
     }
 }
