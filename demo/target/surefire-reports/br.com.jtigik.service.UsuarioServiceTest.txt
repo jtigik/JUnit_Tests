@@ -1,21 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: br.com.jtigik.service.UsuarioServiceTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.474 s <<< FAILURE! -- in br.com.jtigik.service.UsuarioServiceTest
-br.com.jtigik.service.UsuarioServiceTest.deveRetornarUsuarioPorEmail -- Time elapsed: 0.022 s <<< FAILURE!
-Argument(s) are different! Wanted:
-usuarioRepository.getUserByEmail(
-    "maill@mail.com"
-);
--> at br.com.jtigik.service.UsuarioServiceTest.deveRetornarUsuarioPorEmail(UsuarioServiceTest.java:43)
-Actual invocations have different arguments:
-usuarioRepository.getUserByEmail(
-    "mail@mail.com"
-);
--> at br.com.jtigik.service.UsuarioService.getUserByEmail(UsuarioService.java:25)
-
-	at br.com.jtigik.service.UsuarioServiceTest.deveRetornarUsuarioPorEmail(UsuarioServiceTest.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.462 s -- in br.com.jtigik.service.UsuarioServiceTest

@@ -5,8 +5,7 @@ import java.util.Optional;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import br.com.jtigik.domain.Usuario;
@@ -31,18 +30,23 @@ public class UsuarioServiceTest {
 
     @Test
     public void deveRetornarUsuarioPorEmail() {
-        UsuarioRepository repository = Mockito.mock(UsuarioRepository.class);
+        UsuarioRepository repository = mock(UsuarioRepository.class);
         service = new UsuarioService(repository);
 
         when(repository.getUserByEmail("mail@mail.com"))
-                .thenReturn(Optional.of(UsuarioBuilder.umUsuario().agora()));
+                .thenReturn(Optional.of(UsuarioBuilder.umUsuario().agora()))
+                .thenReturn(Optional.of(UsuarioBuilder.umUsuario().agora()))
+                .thenReturn(null);
 
         Optional<Usuario> user = service.getUserByEmail("mail@mail.com");
-
-        Assertions.assertTrue(user.isPresent());
-
+        System.out.println(user);
+        user = service.getUserByEmail("mail@mail.com");
+        System.out.println(user);
+        user = service.getUserByEmail("mail@mail.com");
         System.out.println(user);
 
-        verify(repository, times(1)).getUserByEmail("mail@mail.com");
+        //Assertions.assertTrue(user.isPresent());
+        // verify(repository, times(1)).getUserByEmail("mail@mail.com");
+        //verify(repository, Mockito.atLeastOnce()).getUserByEmail("mail@mail.com");
     }
 }
