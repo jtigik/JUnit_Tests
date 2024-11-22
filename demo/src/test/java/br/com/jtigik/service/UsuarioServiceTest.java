@@ -3,11 +3,15 @@ package br.com.jtigik.service;
 import java.util.Optional;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import org.mockito.MockitoAnnotations;
 
 import br.com.jtigik.domain.Usuario;
 import br.com.jtigik.domain.builder.UsuarioBuilder;
@@ -16,11 +20,19 @@ import br.com.jtigik.service.repositories.UsuarioRepository;
 
 public class UsuarioServiceTest {
 
+    @Mock
+    private static UsuarioRepository repository;
+    @InjectMocks
     private static UsuarioService service;
+
+    @BeforeEach
+    public void setUp() {
+        MockitoAnnotations.openMocks(this);
+    }
 
     @Test
     public void deveRetornarEmptyQuandoUsuarioInexistente() {
-        UsuarioRepository repository = Mockito.mock(UsuarioRepository.class);
+        repository = Mockito.mock(UsuarioRepository.class);
         service = new UsuarioService(repository);
 
         Mockito.when(repository.getUserByEmail("mail@mail.com")).thenReturn(Optional.empty());
@@ -33,7 +45,7 @@ public class UsuarioServiceTest {
     @SuppressWarnings("unchecked")
     @Test
     public void deveRetornarUsuarioPorEmail() {
-        UsuarioRepository repository = mock(UsuarioRepository.class);
+        repository = mock(UsuarioRepository.class);
         service = new UsuarioService(repository);
 
         when(repository.getUserByEmail("mail@mail.com"))
@@ -57,7 +69,7 @@ public class UsuarioServiceTest {
 
     @Test
     public void deveSalvarUsuarioComSucesso() {
-        UsuarioRepository repository = mock(UsuarioRepository.class);
+        repository = mock(UsuarioRepository.class);
         service = new UsuarioService(repository);
         Usuario userToSave = umUsuario().comId(null).agora();
 
