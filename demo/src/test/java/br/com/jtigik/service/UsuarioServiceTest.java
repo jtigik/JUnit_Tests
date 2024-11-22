@@ -59,10 +59,21 @@ public class UsuarioServiceTest {
     public void deveSalvarUsuarioComSucesso() {
         UsuarioRepository repository = mock(UsuarioRepository.class);
         service = new UsuarioService(repository);
-
         Usuario userToSave = umUsuario().comId(null).agora();
 
-        service.salvar(userToSave);
+        when(repository.getUserByEmail(userToSave.getEmail())).
+                thenReturn(Optional.empty());
+
+        when(repository.salvar(userToSave)).thenReturn(umUsuario().agora());
+
+        Usuario savedUser = service.salvar(userToSave);
+
+        Assertions.assertNotNull(savedUser.getId());
+
+        verify(repository).getUserByEmail(userToSave.getEmail());
+
+        verify(repository).salvar(userToSave);
+
     }
 
 }
