@@ -1,15 +1,17 @@
 package br.com.jtigik.service;
 
-import static org.mockito.Mockito.*;
-
 import java.util.Optional;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import br.com.jtigik.domain.Usuario;
 import br.com.jtigik.domain.builder.UsuarioBuilder;
+import static br.com.jtigik.domain.builder.UsuarioBuilder.umUsuario;
 import br.com.jtigik.service.repositories.UsuarioRepository;
 
 public class UsuarioServiceTest {
@@ -35,7 +37,7 @@ public class UsuarioServiceTest {
         service = new UsuarioService(repository);
 
         when(repository.getUserByEmail("mail@mail.com"))
-                .thenReturn(Optional.of(UsuarioBuilder.umUsuario().agora()),
+                .thenReturn(Optional.of(umUsuario().agora()),
                         Optional.of(UsuarioBuilder.umUsuario().agora()),
                         null);
 
@@ -52,4 +54,15 @@ public class UsuarioServiceTest {
         verify(repository, Mockito.never()).getUserByEmail("outro.mail@mail.com");
         Mockito.verifyNoMoreInteractions(repository);
     }
+
+    @Test
+    public void deveSalvarUsuarioComSucesso() {
+        UsuarioRepository repository = mock(UsuarioRepository.class);
+        service = new UsuarioService(repository);
+
+        Usuario userToSave = umUsuario().comId(null).agora();
+
+        service.salvar(userToSave);
+    }
+
 }
