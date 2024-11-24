@@ -21,15 +21,15 @@ public class Conta {
         this.usuario = usuario;
     }
 
-    long id() {
+    public long id() {
         return id;
     }
 
-    Object nome() {
+    public Object nome() {
         return nome;
     }
 
-    Object usuario() {
+    public Object usuario() {
         return usuario;
     }
 
