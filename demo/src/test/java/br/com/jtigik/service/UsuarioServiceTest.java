@@ -9,6 +9,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import org.mockito.MockitoAnnotations;
@@ -99,5 +100,7 @@ public class UsuarioServiceTest {
                 -> service.salvar(userToSave)
         );
         Assertions.assertTrue(e.getMessage().endsWith("já cadastrado!"));
+
+        verify(repository, never()).salvar(userToSave);
     }
 }
