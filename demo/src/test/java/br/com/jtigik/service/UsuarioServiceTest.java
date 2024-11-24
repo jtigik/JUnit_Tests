@@ -16,6 +16,7 @@ import org.mockito.MockitoAnnotations;
 import br.com.jtigik.domain.Usuario;
 import br.com.jtigik.domain.builder.UsuarioBuilder;
 import static br.com.jtigik.domain.builder.UsuarioBuilder.umUsuario;
+import br.com.jtigik.domain.exceptions.ValidationException;
 import br.com.jtigik.service.repositories.UsuarioRepository;
 
 public class UsuarioServiceTest {
@@ -85,7 +86,18 @@ public class UsuarioServiceTest {
         verify(repository).getUserByEmail(userToSave.getEmail());
 
         verify(repository).salvar(userToSave);
-
     }
 
+    @Test
+    public void deveRejeitarUsuarioExistente() {
+        Usuario userToSave = umUsuario().comId(null).agora();
+
+        when(repository.getUserByEmail(userToSave.getEmail()))
+                .thenReturn(Optional.of(umUsuario().agora()));
+
+        ValidationException e = Assertions.assertThrows(ValidationException.class, ()
+                -> service.salvar(userToSave)
+        );
+        Assertions.assertTrue(e.getMessage().endsWith("já cadastrado!"));
+    }
 }
