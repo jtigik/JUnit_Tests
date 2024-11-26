@@ -1,11 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: br.com.jtigik.service.ContaServiceTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.423 s <<< FAILURE! -- in br.com.jtigik.service.ContaServiceTest
-br.com.jtigik.service.ContaServiceTest.deveSalvarComSucesso -- Time elapsed: 0.400 s <<< ERROR!
-java.lang.NullPointerException: Cannot invoke "br.com.jtigik.domain.Conta.id()" because "savedConta" is null
-	at br.com.jtigik.service.ContaServiceTest.deveSalvarComSucesso(ContaServiceTest.java:28)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.439 s -- in br.com.jtigik.service.ContaServiceTest
