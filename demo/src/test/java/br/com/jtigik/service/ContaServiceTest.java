@@ -25,8 +25,20 @@ public class ContaServiceTest {
     private ContaRepository repository;
 
     @Test
-    public void deveSalvarComSucesso() {
+    public void deveSalvarPrimeiraContaComSucesso() {
         Conta contaToSave = umaConta().comId(null).agora();
+
+        Conta savedConta = service.salvar(contaToSave);
+
+        Assertions.assertNotNull(savedConta.id());
+    }
+
+    @Test
+    public void deveSalvarContaMesmoJaExistindoOutras() {
+        Conta contaToSave = umaConta().comId(null).agora();
+        when(repository.obterContasPorUsuario(contaToSave.usuario().getId()))
+                .thenReturn(Arrays.asList(umaConta().comNome("Outra conta").agora()));
+        when(repository.salvar(contaToSave)).thenReturn(umaConta().agora());
 
         Conta savedConta = service.salvar(contaToSave);
 
@@ -45,15 +57,4 @@ public class ContaServiceTest {
         Assertions.assertEquals("Usuário já possui uma conta com este nome", message);
     }
 
-    @Test
-    public void deveSalvarContaMesmoJaExistindoOutras() {
-        Conta contaToSave = umaConta().comId(null).agora();
-        when(repository.obterContasPorUsuario(contaToSave.usuario().getId()))
-                .thenReturn(Arrays.asList(umaConta().agora()));
-
-        String message = Assertions.assertThrows(ValidationException.class, ()
-                -> service.salvar(contaToSave)).getMessage();
-
-        Assertions.assertEquals("Usuário já possui uma conta com este nome", message);
-    }
 }
