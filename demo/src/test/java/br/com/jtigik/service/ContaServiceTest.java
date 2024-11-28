@@ -33,6 +33,18 @@ public class ContaServiceTest {
     }
 
     @Test
+    public void deveSalvarContaMesmoJaExistindoOutras() {
+        Conta contaToSave = umaConta().comId(null).agora();
+        when(repository.obterContasPorUsuario(contaToSave.usuario().getId()))
+                .thenReturn(Arrays.asList(umaConta().comNome("Outra conta").agora()));
+        when(repository.salvar(contaToSave)).thenReturn(umaConta().agora());
+
+        Conta savedConta = service.salvar(contaToSave);
+
+        Assertions.assertNotNull(savedConta.id());
+    }
+
+    @Test
     public void deveRejeitarContaRepetida() {
         Conta contaToSave = umaConta().comId(null).agora();
         when(repository.obterContasPorUsuario(contaToSave.usuario().getId()))

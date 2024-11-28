@@ -1,12 +1,12 @@
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -19,6 +19,7 @@ import br.com.jtigik.testes.Calculadora;
 public class CalculadoraTest {
 
     private static Calculadora calc;
+    private float resultado = 0;
 
     private int contador = 0;
 
@@ -100,7 +101,7 @@ public class CalculadoraTest {
     public void retornarNumeroInteiroNaDivisao() {
         System.out.println(contador++);
 
-        float resultado = calc.divide(6, 2);
+        resultado = calc.divide(6, 2);
 
         Assertions.assertEquals(3, resultado);
     }
@@ -110,7 +111,7 @@ public class CalculadoraTest {
 
         System.out.println(contador++);
 
-        float resultado = calc.divide(6, -2);
+        resultado = calc.divide(6, -2);
 
         Assertions.assertEquals(-3, resultado);
     }
@@ -120,7 +121,7 @@ public class CalculadoraTest {
 
         System.out.println(contador++);
 
-        float resultado = calc.divide(16, -23);
+        resultado = calc.divide(16, -23);
 
     }
 
@@ -129,7 +130,7 @@ public class CalculadoraTest {
 
         System.out.println(contador++);
 
-        float resultado = calc.divide(10, 3);
+        resultado = calc.divide(10, 3);
 
         Assertions.assertEquals(3.33, resultado, 0.01);
     }
@@ -139,7 +140,7 @@ public class CalculadoraTest {
 
         System.out.println(contador++);
 
-        float resultado = calc.divide(0, 3);
+        resultado = calc.divide(0, 3);
 
         Assertions.assertEquals(0, resultado);
     }
@@ -150,7 +151,7 @@ public class CalculadoraTest {
         System.out.println(contador++);
 
         try {
-            float resultado = 10 / 0;
+            resultado = 10 / 0;
 
             Assertions.fail("Deveria ser lançada exceção na divisão");
 
@@ -166,7 +167,7 @@ public class CalculadoraTest {
         System.out.println(contador++);
 
         ArithmeticException exception = Assertions.assertThrows(ArithmeticException.class, () -> {
-            float resultado = 10 / 0;
+            resultado = 10 / 0;
         });
         Assertions.assertEquals("/ by zero", exception.getMessage());
     }
@@ -190,7 +191,7 @@ public class CalculadoraTest {
         "0, 2, 0"
     })
     public void deveDividirCorretamente(int num, int den, double res) {
-        float resultado = calc.divide(num, den);
+        resultado = calc.divide(num, den);
         Assertions.assertEquals(res, resultado);
     }
 }
