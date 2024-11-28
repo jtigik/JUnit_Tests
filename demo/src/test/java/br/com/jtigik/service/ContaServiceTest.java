@@ -15,7 +15,6 @@ import static br.com.jtigik.domain.builder.ContaBuilder.umaConta;
 import br.com.jtigik.domain.exceptions.ValidationException;
 import br.com.jtigik.service.repositories.ContaRepository;
 
-@SuppressWarnings("unused")
 @ExtendWith(MockitoExtension.class)
 public class ContaServiceTest {
 
