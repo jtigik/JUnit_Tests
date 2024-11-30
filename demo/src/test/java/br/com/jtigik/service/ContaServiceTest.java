@@ -7,12 +7,15 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import static org.mockito.Mockito.when;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import br.com.jtigik.domain.Conta;
 import static br.com.jtigik.domain.builder.ContaBuilder.umaConta;
 import br.com.jtigik.domain.exceptions.ValidationException;
+import br.com.jtigik.service.event.ContaEvent;
+import br.com.jtigik.service.event.ContaEvent.EventType;
 import br.com.jtigik.service.repositories.ContaRepository;
 
 @ExtendWith(MockitoExtension.class)
@@ -23,9 +26,15 @@ public class ContaServiceTest {
     @Mock
     private ContaRepository repository;
 
+    @Mock
+    private ContaEvent event;
+
     @Test
     public void deveSalvarPrimeiraContaComSucesso() {
         Conta contaToSave = umaConta().comId(null).agora();
+        when(repository.salvar(contaToSave)).thenReturn(umaConta().agora());
+
+        Mockito.doNothing().when(event).dispatch(umaConta().agora(), EventType.CREATED);
 
         Conta savedConta = service.salvar(contaToSave);
 

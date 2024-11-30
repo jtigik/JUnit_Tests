@@ -1,4 +1,34 @@
 -------------------------------------------------------------------------------
 Test set: br.com.jtigik.service.ContaServiceTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.425 s -- in br.com.jtigik.service.ContaServiceTest
+Tests run: 3, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.510 s <<< FAILURE! -- in br.com.jtigik.service.ContaServiceTest
+br.com.jtigik.service.ContaServiceTest.deveSalvarPrimeiraContaComSucesso -- Time elapsed: 0.016 s <<< ERROR!
+org.mockito.exceptions.misusing.PotentialStubbingProblem: 
+
+Strict stubbing argument mismatch. Please check:
+ - this invocation of 'dispatch' method:
+    event.dispatch(
+    br.com.jtigik.domain.Conta@f21c94bb,
+    CREATED
+);
+    -> at br.com.jtigik.service.ContaService.salvar(ContaService.java:29)
+ - has following stubbing(s) with different arguments:
+    1. event.dispatch(
+    br.com.jtigik.domain.Conta@f21c987c,
+    CREATED
+);
+      -> at br.com.jtigik.service.ContaServiceTest.deveSalvarPrimeiraContaComSucesso(ContaServiceTest.java:37)
+Typically, stubbing argument mismatch indicates user mistake when writing tests.
+Mockito fails early so that you can debug potential problem easily.
+However, there are legit scenarios when this exception generates false negative signal:
+  - stubbing the same method multiple times using 'given().will()' or 'when().then()' API
+    Please use 'will().given()' or 'doReturn().when()' API for stubbing.
+  - stubbed method is intentionally invoked with different arguments by code under test
+    Please use default or 'silent' JUnit Rule (equivalent of Strictness.LENIENT).
+For more information see javadoc for PotentialStubbingProblem class.
+	at br.com.jtigik.service.ContaService.salvar(ContaService.java:29)
+	at br.com.jtigik.service.ContaServiceTest.deveSalvarPrimeiraContaComSucesso(ContaServiceTest.java:39)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
