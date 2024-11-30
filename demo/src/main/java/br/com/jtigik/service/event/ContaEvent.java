@@ -10,6 +10,6 @@ public interface ContaEvent {
         DELETED
     }
 
-    void dispatch(Conta conta, EventType type);
+    void dispatch(Conta conta, EventType type) throws Exception;
 
 }
