@@ -1,5 +1,6 @@
 package br.com.jtigik.service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import br.com.jtigik.domain.Conta;
@@ -25,7 +26,7 @@ public class ContaService {
                 throw new ValidationException("Usuário já possui uma conta com este nome");
             }
         });
-        Conta contaPersistida = repository.salvar(conta);
+        Conta contaPersistida = repository.salvar(new Conta(conta.id(), conta.nome() + LocalDateTime.now(), conta.usuario()));
         try {
             event.dispatch(contaPersistida, EventType.CREATED);
         } catch (Exception e) {
