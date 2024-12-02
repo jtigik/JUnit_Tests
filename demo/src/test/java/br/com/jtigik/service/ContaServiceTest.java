@@ -1,6 +1,5 @@
 package br.com.jtigik.service;
 
-import java.time.LocalDateTime;
 import java.util.Arrays;
 
 import org.junit.jupiter.api.Assertions;
@@ -34,14 +33,15 @@ public class ContaServiceTest {
     public void deveSalvarPrimeiraContaComSucesso() throws Exception {
         Conta contaToSave = umaConta().comId(null).agora();
 
-        Conta contaToInvoque = umaConta().comId(null).comNome("Conta Válida" + LocalDateTime.now()).agora();
-        when(repository.salvar(contaToInvoque)).thenReturn(umaConta().agora());
+        when(repository.salvar(Mockito.any(Conta.class))).thenReturn(umaConta().agora());
 
         Mockito.doNothing().when(event).dispatch(umaConta().agora(), EventType.CREATED);
 
         Conta savedConta = service.salvar(contaToSave);
 
         Assertions.assertNotNull(savedConta.id());
+
+        Mockito.verify(repository).salvar(Mockito.any());
     }
 
     @Test
@@ -49,7 +49,7 @@ public class ContaServiceTest {
         Conta contaToSave = umaConta().comId(null).agora();
         when(repository.obterContasPorUsuario(contaToSave.usuario().getId()))
                 .thenReturn(Arrays.asList(umaConta().comNome("Outra conta").agora()));
-        when(repository.salvar(contaToSave)).thenReturn(umaConta().agora());
+        when(repository.salvar(Mockito.any(Conta.class))).thenReturn(umaConta().agora());
 
         Conta savedConta = service.salvar(contaToSave);
 
@@ -72,7 +72,7 @@ public class ContaServiceTest {
     public void naoDeveManterContaSemEvento() throws Exception {
         Conta contaToSave = umaConta().comId(null).agora();
         Conta contaSalva = umaConta().agora();
-        when(repository.salvar(contaToSave)).thenReturn(contaSalva);
+        when(repository.salvar(Mockito.any(Conta.class))).thenReturn(contaSalva);
 
         Mockito.doThrow(new Exception("Falhou!!"))
                 .when(event).dispatch(contaSalva, EventType.CREATED);
