@@ -1,5 +1,6 @@
 package br.com.jtigik.service;
 
+import java.time.LocalDateTime;
 import java.util.Arrays;
 
 import org.junit.jupiter.api.Assertions;
@@ -32,7 +33,9 @@ public class ContaServiceTest {
     @Test
     public void deveSalvarPrimeiraContaComSucesso() throws Exception {
         Conta contaToSave = umaConta().comId(null).agora();
-        when(repository.salvar(contaToSave)).thenReturn(umaConta().agora());
+
+        Conta contaToInvoque = umaConta().comId(null).comNome("Conta Válida" + LocalDateTime.now()).agora();
+        when(repository.salvar(contaToInvoque)).thenReturn(umaConta().agora());
 
         Mockito.doNothing().when(event).dispatch(umaConta().agora(), EventType.CREATED);
 

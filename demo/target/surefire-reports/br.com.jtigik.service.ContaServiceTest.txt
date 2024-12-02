@@ -1,21 +1,21 @@
 -------------------------------------------------------------------------------
 Test set: br.com.jtigik.service.ContaServiceTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 1, Errors: 2, Skipped: 0, Time elapsed: 0.506 s <<< FAILURE! -- in br.com.jtigik.service.ContaServiceTest
-br.com.jtigik.service.ContaServiceTest.deveSalvarPrimeiraContaComSucesso -- Time elapsed: 0.022 s <<< ERROR!
+Tests run: 4, Failures: 1, Errors: 2, Skipped: 0, Time elapsed: 0.472 s <<< FAILURE! -- in br.com.jtigik.service.ContaServiceTest
+br.com.jtigik.service.ContaServiceTest.deveSalvarPrimeiraContaComSucesso -- Time elapsed: 0.020 s <<< ERROR!
 org.mockito.exceptions.misusing.PotentialStubbingProblem: 
 
 Strict stubbing argument mismatch. Please check:
  - this invocation of 'salvar' method:
     repository.salvar(
-    Conta [id=null, nome=Conta Válida2024-12-01T23:45:25.737556700, usuario=Usuario [id=1, nome=Usuário válido, email=user@mail.com, senha=123456]]
+    Conta [id=null, nome=Conta Válida2024-12-01T23:58:08.092235, usuario=Usuario [id=1, nome=Usuário válido, email=user@mail.com, senha=123456]]
 );
     -> at br.com.jtigik.service.ContaService.salvar(ContaService.java:29)
  - has following stubbing(s) with different arguments:
     1. repository.salvar(
-    Conta [id=null, nome=Conta Válida, usuario=Usuario [id=1, nome=Usuário válido, email=user@mail.com, senha=123456]]
+    Conta [id=null, nome=Conta Válida2024-12-01T23:58:08.089550500, usuario=Usuario [id=1, nome=Usuário válido, email=user@mail.com, senha=123456]]
 );
-      -> at br.com.jtigik.service.ContaServiceTest.deveSalvarPrimeiraContaComSucesso(ContaServiceTest.java:35)
+      -> at br.com.jtigik.service.ContaServiceTest.deveSalvarPrimeiraContaComSucesso(ContaServiceTest.java:38)
 Typically, stubbing argument mismatch indicates user mistake when writing tests.
 Mockito fails early so that you can debug potential problem easily.
 However, there are legit scenarios when this exception generates false negative signal:
@@ -25,25 +25,25 @@ However, there are legit scenarios when this exception generates false negative 
     Please use default or 'silent' JUnit Rule (equivalent of Strictness.LENIENT).
 For more information see javadoc for PotentialStubbingProblem class.
 	at br.com.jtigik.service.ContaService.salvar(ContaService.java:29)
-	at br.com.jtigik.service.ContaServiceTest.deveSalvarPrimeiraContaComSucesso(ContaServiceTest.java:39)
+	at br.com.jtigik.service.ContaServiceTest.deveSalvarPrimeiraContaComSucesso(ContaServiceTest.java:42)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
 
-br.com.jtigik.service.ContaServiceTest.deveSalvarContaMesmoJaExistindoOutras -- Time elapsed: 0.005 s <<< ERROR!
+br.com.jtigik.service.ContaServiceTest.deveSalvarContaMesmoJaExistindoOutras -- Time elapsed: 0.004 s <<< ERROR!
 org.mockito.exceptions.misusing.PotentialStubbingProblem: 
 
 Strict stubbing argument mismatch. Please check:
  - this invocation of 'salvar' method:
     repository.salvar(
-    Conta [id=null, nome=Conta Válida2024-12-01T23:45:25.753905700, usuario=Usuario [id=1, nome=Usuário válido, email=user@mail.com, senha=123456]]
+    Conta [id=null, nome=Conta Válida2024-12-01T23:58:08.108633500, usuario=Usuario [id=1, nome=Usuário válido, email=user@mail.com, senha=123456]]
 );
     -> at br.com.jtigik.service.ContaService.salvar(ContaService.java:29)
  - has following stubbing(s) with different arguments:
     1. repository.salvar(
     Conta [id=null, nome=Conta Válida, usuario=Usuario [id=1, nome=Usuário válido, email=user@mail.com, senha=123456]]
 );
-      -> at br.com.jtigik.service.ContaServiceTest.deveSalvarContaMesmoJaExistindoOutras(ContaServiceTest.java:49)
+      -> at br.com.jtigik.service.ContaServiceTest.deveSalvarContaMesmoJaExistindoOutras(ContaServiceTest.java:52)
 Typically, stubbing argument mismatch indicates user mistake when writing tests.
 Mockito fails early so that you can debug potential problem easily.
 However, there are legit scenarios when this exception generates false negative signal:
@@ -53,7 +53,7 @@ However, there are legit scenarios when this exception generates false negative 
     Please use default or 'silent' JUnit Rule (equivalent of Strictness.LENIENT).
 For more information see javadoc for PotentialStubbingProblem class.
 	at br.com.jtigik.service.ContaService.salvar(ContaService.java:29)
-	at br.com.jtigik.service.ContaServiceTest.deveSalvarContaMesmoJaExistindoOutras(ContaServiceTest.java:51)
+	at br.com.jtigik.service.ContaServiceTest.deveSalvarContaMesmoJaExistindoOutras(ContaServiceTest.java:54)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
@@ -64,14 +64,14 @@ expected: <Falha na criação da Conta, tente novamente!> but was: <
 Strict stubbing argument mismatch. Please check:
  - this invocation of 'salvar' method:
     repository.salvar(
-    Conta [id=null, nome=Conta Válida2024-12-01T23:45:25.761358600, usuario=Usuario [id=1, nome=Usuário válido, email=user@mail.com, senha=123456]]
+    Conta [id=null, nome=Conta Válida2024-12-01T23:58:08.114872100, usuario=Usuario [id=1, nome=Usuário válido, email=user@mail.com, senha=123456]]
 );
     -> at br.com.jtigik.service.ContaService.salvar(ContaService.java:29)
  - has following stubbing(s) with different arguments:
     1. repository.salvar(
     Conta [id=null, nome=Conta Válida, usuario=Usuario [id=1, nome=Usuário válido, email=user@mail.com, senha=123456]]
 );
-      -> at br.com.jtigik.service.ContaServiceTest.naoDeveManterContaSemEvento(ContaServiceTest.java:72)
+      -> at br.com.jtigik.service.ContaServiceTest.naoDeveManterContaSemEvento(ContaServiceTest.java:75)
 Typically, stubbing argument mismatch indicates user mistake when writing tests.
 Mockito fails early so that you can debug potential problem easily.
 However, there are legit scenarios when this exception generates false negative signal:
@@ -86,7 +86,7 @@ For more information see javadoc for PotentialStubbingProblem class.>
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
 	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
-	at br.com.jtigik.service.ContaServiceTest.naoDeveManterContaSemEvento(ContaServiceTest.java:80)
+	at br.com.jtigik.service.ContaServiceTest.naoDeveManterContaSemEvento(ContaServiceTest.java:83)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
