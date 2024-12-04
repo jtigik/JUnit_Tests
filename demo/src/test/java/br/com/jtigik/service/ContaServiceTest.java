@@ -46,7 +46,9 @@ public class ContaServiceTest {
 
         Assertions.assertNotNull(savedConta.id());
 
-        Mockito.verify(repository).salvar(Mockito.any());
+        Mockito.verify(repository).salvar(contaCaptor.capture());
+
+        System.out.println(contaCaptor.getValue());
     }
 
     @Test
