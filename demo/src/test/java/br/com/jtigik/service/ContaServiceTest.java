@@ -5,6 +5,8 @@ import java.util.Arrays;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.ArgumentCaptor;
+import org.mockito.Captor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
@@ -28,6 +30,9 @@ public class ContaServiceTest {
 
     @Mock
     private ContaEvent event;
+
+    @Captor
+    private ArgumentCaptor<Conta> contaCaptor;
 
     @Test
     public void deveSalvarPrimeiraContaComSucesso() throws Exception {
