@@ -6,6 +6,7 @@ import java.util.List;
 import br.com.jtigik.domain.Conta;
 import br.com.jtigik.domain.exceptions.ValidationException;
 import br.com.jtigik.service.event.ContaEvent;
+import br.com.jtigik.service.event.ContaEvent.EventType;
 import br.com.jtigik.service.repositories.ContaRepository;
 
 public class ContaService {
@@ -29,13 +30,13 @@ public class ContaService {
         Conta novaConta = new Conta(conta.id(), conta.nome() + LocalDateTime.now(), conta.usuario());
         System.out.println(novaConta);
         Conta contaPersistida = repository.salvar(novaConta);
-        /*
+
         try {
             event.dispatch(contaPersistida, EventType.CREATED);
         } catch (Exception e) {
             repository.delete(contaPersistida);
             throw new RuntimeException("Falha na criação da Conta, tente novamente!");
-        } */
+        }
 
         return contaPersistida;
     }
