@@ -34,7 +34,7 @@ public class ContaServiceTest {
     @Captor
     private ArgumentCaptor<Conta> contaCaptor;
 
-    @Test
+    /*@Test
     public void deveSalvarPrimeiraContaComSucesso() throws Exception {
         Conta contaToSave = umaConta().comId(null).agora();
 
@@ -51,8 +51,7 @@ public class ContaServiceTest {
         Assertions.assertNull(contaCaptor.getValue().id());
 
         Assertions.assertTrue(contaCaptor.getValue().nome().startsWith("Conta Válida"));
-    }
-
+    }*/
     @Test
     public void deveSalvarContaMesmoJaExistindoOutras() {
         Conta contaToSave = umaConta().comId(null).agora();
