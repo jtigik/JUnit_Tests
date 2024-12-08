@@ -1,10 +1,13 @@
 C:\Users\Jeferson Tigik\OneDrive\SENAC - Tech\INF3N231\02 - Java-Teste+JUnit\00 - Fontes\demo\src\test\java\br\com\jtigik\domain\builder\BuilderMaster.java
+C:\Users\Jeferson Tigik\OneDrive\SENAC - Tech\INF3N231\02 - Java-Teste+JUnit\00 - Fontes\demo\src\test\java\br\com\jtigik\domain\builder\BuilderMasterPOJO.java
 C:\Users\Jeferson Tigik\OneDrive\SENAC - Tech\INF3N231\02 - Java-Teste+JUnit\00 - Fontes\demo\src\test\java\br\com\jtigik\domain\builder\ContaBuilder.java
+C:\Users\Jeferson Tigik\OneDrive\SENAC - Tech\INF3N231\02 - Java-Teste+JUnit\00 - Fontes\demo\src\test\java\br\com\jtigik\domain\builder\TransacaoBuilder.java
 C:\Users\Jeferson Tigik\OneDrive\SENAC - Tech\INF3N231\02 - Java-Teste+JUnit\00 - Fontes\demo\src\test\java\br\com\jtigik\domain\builder\UsuarioBuilder.java
 C:\Users\Jeferson Tigik\OneDrive\SENAC - Tech\INF3N231\02 - Java-Teste+JUnit\00 - Fontes\demo\src\test\java\br\com\jtigik\domain\ContaTest.java
 C:\Users\Jeferson Tigik\OneDrive\SENAC - Tech\INF3N231\02 - Java-Teste+JUnit\00 - Fontes\demo\src\test\java\br\com\jtigik\domain\UsuarioTest.java
 C:\Users\Jeferson Tigik\OneDrive\SENAC - Tech\INF3N231\02 - Java-Teste+JUnit\00 - Fontes\demo\src\test\java\br\com\jtigik\infra\UserServiceComUserMemoryRepositoryTest.java
 C:\Users\Jeferson Tigik\OneDrive\SENAC - Tech\INF3N231\02 - Java-Teste+JUnit\00 - Fontes\demo\src\test\java\br\com\jtigik\infra\UsuarioDummyRepository.java
 C:\Users\Jeferson Tigik\OneDrive\SENAC - Tech\INF3N231\02 - Java-Teste+JUnit\00 - Fontes\demo\src\test\java\br\com\jtigik\service\ContaServiceTest.java
+C:\Users\Jeferson Tigik\OneDrive\SENAC - Tech\INF3N231\02 - Java-Teste+JUnit\00 - Fontes\demo\src\test\java\br\com\jtigik\service\TransacaoServiceTest.java
 C:\Users\Jeferson Tigik\OneDrive\SENAC - Tech\INF3N231\02 - Java-Teste+JUnit\00 - Fontes\demo\src\test\java\br\com\jtigik\service\UsuarioServiceTest.java
 C:\Users\Jeferson Tigik\OneDrive\SENAC - Tech\INF3N231\02 - Java-Teste+JUnit\00 - Fontes\demo\src\test\java\CalculadoraTest.java
