@@ -1,4 +1,9 @@
 -------------------------------------------------------------------------------
 Test set: br.com.jtigik.service.TransacaoServiceTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.434 s -- in br.com.jtigik.service.TransacaoServiceTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.410 s <<< FAILURE! -- in br.com.jtigik.service.TransacaoServiceTest
+br.com.jtigik.service.TransacaoServiceTest.deveValidarCamposObrigatoriosAoSalvar(Long, String, Double, LocalDate, Conta, Boolean, String) -- Time elapsed: 0.385 s <<< ERROR!
+org.junit.jupiter.api.extension.ParameterResolutionException: No ParameterResolver registered for parameter [java.lang.Long arg0] in method [public void br.com.jtigik.service.TransacaoServiceTest.deveValidarCamposObrigatoriosAoSalvar(java.lang.Long,java.lang.String,java.lang.Double,java.time.LocalDate,br.com.jtigik.domain.Conta,java.lang.Boolean,java.lang.String)].
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
