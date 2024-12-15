@@ -12,7 +12,7 @@ public class TransacaoService {
 
     public Transacao salvar(Transacao transacao) {
 
-        if (LocalDateTime.now().getHour() > 20) {
+        if (LocalDateTime.now().getHour() > 24) {
             throw new RuntimeException("Tente novamente amanhã!");
         }
 

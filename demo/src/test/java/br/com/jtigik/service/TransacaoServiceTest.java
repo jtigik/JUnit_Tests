@@ -8,13 +8,13 @@ import org.junit.jupiter.api.Assertions;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.condition.EnabledIf;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
@@ -25,8 +25,7 @@ import static br.com.jtigik.domain.builder.TransacaoBuilder.umaTransacao;
 import br.com.jtigik.domain.exceptions.ValidationException;
 import br.com.jtigik.service.repositories.TransacaoDao;
 
-@EnabledIf(value = "isHoraValida")
-
+/* @EnabledIf(value = "isHoraValida") */
 @ExtendWith(MockitoExtension.class)
 public class TransacaoServiceTest {
 
@@ -39,13 +38,20 @@ public class TransacaoServiceTest {
     public void deveSalvarTransacaoValida() {
 
         Transacao transacaoParaSalvar = umaTransacao().comId(null).agora();
-
         Mockito.when(dao.salvar(transacaoParaSalvar)).thenReturn(umaTransacao().agora());
 
+        LocalDateTime dataDesejada = LocalDateTime.of(2023, 1, 1, 4, 0);
+        System.out.println(LocalDateTime.now());
+
+        try (MockedStatic<LocalDateTime> ldt = Mockito.mockStatic(LocalDateTime.class)) {
+            ldt.when(() -> LocalDateTime.now()).thenReturn(dataDesejada);
+            System.out.println(LocalDateTime.now());
+        }
+
+        System.out.println(LocalDateTime.now());
+
         Transacao transacaoSalva = service.salvar(transacaoParaSalvar);
-
         Assertions.assertEquals(umaTransacao().agora(), transacaoSalva);
-
         Assertions.assertAll("transação",
                 () -> assertEquals(1L, transacaoSalva.getId()),
                 () -> assertEquals("Transação Válida", transacaoSalva.getDescricao()),
@@ -87,7 +93,7 @@ public class TransacaoServiceTest {
         );
     }
 
-    public static boolean isHoraValida() {
+    /* public static boolean isHoraValida() {
         return LocalDateTime.now().getHour() < 20;
-    }
+    } */
 }

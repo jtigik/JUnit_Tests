@@ -1,4 +1,17 @@
 -------------------------------------------------------------------------------
 Test set: br.com.jtigik.service.TransacaoServiceTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 0.009 s -- in br.com.jtigik.service.TransacaoServiceTest
+Tests run: 5, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.479 s <<< FAILURE! -- in br.com.jtigik.service.TransacaoServiceTest
+br.com.jtigik.service.TransacaoServiceTest.deveSalvarTransacaoValida -- Time elapsed: 0.024 s <<< ERROR!
+org.mockito.exceptions.base.MockitoException: 
+
+The used MockMaker SubclassByteBuddyMockMaker does not support the creation of static mocks
+
+Mockito's inline mock maker supports static mocks based on the Instrumentation API.
+You can simply enable this mock mode, by placing the 'mockito-inline' artifact where you are currently using 'mockito-core'.
+Note that Mockito's inline mock maker is not supported on Android.
+	at br.com.jtigik.service.TransacaoServiceTest.deveSalvarTransacaoValida(TransacaoServiceTest.java:46)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
